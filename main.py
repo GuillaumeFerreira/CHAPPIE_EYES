@@ -1,6 +1,6 @@
 import cv2
 
-face_cascade = cv2.CascadeClassifier("./haarcascade_frontalface_alt2.xml")
+face_cascade = cv2.CascadeClassifier("./haarcascade_frontalcatface.xml")
 cap = cv2.VideoCapture(0)
 
 while True:
