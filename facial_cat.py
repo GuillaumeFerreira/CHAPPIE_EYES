@@ -8,7 +8,6 @@ def reco_facial_cat():
         "./xml/haarcascade_frontalcatface_extended.xml"
     )
     cap = cv2.VideoCapture(0)
-    width = int(cap.get(3))
     marge = 70
     while True:
         ret, frame = cap.read()
@@ -54,3 +53,6 @@ def reco_facial_cat():
         cv2.imshow("video", frame)
     cap.release()
     cv2.destroyAllWindows()
+
+
+reco_facial_cat()
