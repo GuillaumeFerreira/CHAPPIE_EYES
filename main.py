@@ -2,8 +2,8 @@ import operator
 
 import cv2
 
-face_cascade = cv2.CascadeClassifier("./haarcascade_frontalcatface.xml")
-extended_cascade = cv2.CascadeClassifier("./haarcascade_frontalcatface_extended.xml")
+face_cascade = cv2.CascadeClassifier("./xml/haarcascade_frontalcatface.xml")
+extended_cascade = cv2.CascadeClassifier("./xml/haarcascade_frontalcatface_extended.xml")
 cap = cv2.VideoCapture(0)
 width = int(cap.get(3))
 marge= 70
@@ -18,7 +18,7 @@ while True:
     face = extended_cascade.detectMultiScale(gray, scaleFactor=1.2, minNeighbors=3)
     for x, y, w, h in face:
         tab_face.append([x, y, x + w, y + h])
-    
+
 
     tab_face =sorted(tab_face, key=operator.itemgetter(0,1))
     index=0
