@@ -3,12 +3,16 @@ import cv2
 
 
 def reco_facial_cat():
+    # Chargement des fichiers xml concernant les visages de chat
     face_cascade = cv2.CascadeClassifier("./xml/haarcascade_frontalcatface.xml")
     extended_cascade = cv2.CascadeClassifier(
         "./xml/haarcascade_frontalcatface_extended.xml"
     )
+    # webcam
     cap = cv2.VideoCapture(0)
+    # variable en pixel pour éviter le double carré
     marge = 70
+
     while True:
         ret, frame = cap.read()
         tab_face = []
